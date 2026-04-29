@@ -6,19 +6,22 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: colors.zinc[950],
-        "on-primary": colors.zinc[50],
-        "primary-hover": colors.zinc[900],
+        primary: colors.blue[200],
+        "primary-border": colors.blue[500],
+        "on-primary": colors.blue[500],
+        "primary-hover": colors.blue[500],
+        "on-primary-hover": colors.blue[200],
+
         secondary: colors.zinc[600],
         "on-secondary": colors.zinc[200],
         "secondary-hover": colors.zinc[500],
       },
       boxShadow: {
-        solid: "4px 4px 0 0 rgba(0, 0, 0, 0.5)",
-        "solid-lg": "8px 8px 0 0 rgba(0, 0, 0, 0.5)",
+        solid: "4px 4px 0 0 rgba(0, 0, 0, 0.25)",
+        "solid-lg": "8px 8px 0 0 rgba(0, 0, 0, 0.25)",
       },
       fontFamily: {
-        pixelify: ["Pixelify Sans"],
+        pixelify: ["Pixelify Sans", "monospace"],
       },
     },
   },
