@@ -19,8 +19,9 @@ export default {
         "on-secondary-hover": colors.red[200],
       },
       boxShadow: {
-        solid: "4px 4px 0 0 rgba(0, 0, 0, 0.25)",
-        "solid-lg": "8px 8px 0 0 rgba(0, 0, 0, 0.25)",
+        "solid-sm": "2px 2px 0 0 rgba(0, 0, 0, 0.25)",
+        "solid-md": "4px 4px 0 0 rgba(0, 0, 0, 0.25)",
+        "solid-lg": "6px 6px 0 0 rgba(0, 0, 0, 0.25)",
       },
       fontFamily: {
         pixelify: ["Pixelify Sans", "monospace"],
