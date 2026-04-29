@@ -12,9 +12,11 @@ export default {
         "primary-hover": colors.blue[500],
         "on-primary-hover": colors.blue[200],
 
-        secondary: colors.zinc[600],
-        "on-secondary": colors.zinc[200],
-        "secondary-hover": colors.zinc[500],
+        secondary: colors.red[200],
+        "secondary-border": colors.red[500],
+        "on-secondary": colors.red[500],
+        "secondary-hover": colors.red[500],
+        "on-secondary-hover": colors.red[200],
       },
       boxShadow: {
         solid: "4px 4px 0 0 rgba(0, 0, 0, 0.25)",
