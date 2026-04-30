@@ -24,7 +24,7 @@ export default {
         "solid-lg": "6px 6px 0 0 rgba(0, 0, 0, 0.25)",
       },
       fontFamily: {
-        pixelify: ["Pixelify Sans", "monospace"],
+        sans: ["Pixelify Sans", "monospace"],
       },
     },
   },
