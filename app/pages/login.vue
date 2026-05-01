@@ -6,25 +6,19 @@
     >
       <h2 class="text-xl font-medium text-white">Sign in</h2>
 
-      <div class="flex flex-col gap-1.5">
-        <label for="username" class="text-sm text-white/50">Username</label>
-        <TextInput
-          id="username"
-          type="text"
-          placeholder="Enter username"
-          class="w-full"
-        />
-      </div>
+      <TextInput
+        label="Username"
+        type="text"
+        placeholder="Enter username"
+        class="w-full"
+      />
 
-      <div class="flex flex-col gap-1.5">
-        <label for="password" class="text-sm text-white/50">Password</label>
-        <TextInput
-          id="password"
-          type="password"
-          placeholder="••••••••"
-          class="w-full"
-        />
-      </div>
+      <TextInput
+        label="Password"
+        type="password"
+        placeholder="••••••••"
+        class="w-full"
+      />
 
       <div class="flex flex-row-reverse gap-5">
         <ButtonPrimary label="Sign In" class="flex-1" />

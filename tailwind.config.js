@@ -39,6 +39,8 @@ export default {
           error: colors.red[50],
           "error-border": colors.red[500],
           "error-foreground": colors.red[900],
+
+          label: colors.slate[300],
         },
       },
       boxShadow: {

@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="flex flex-col gap-2">
+    <label class="text-input-label">{{ props.label }}</label>
     <input
       :type="props.type"
       :placeholder="props.placeholder"
@@ -20,6 +21,7 @@
 
 <script setup lang="ts">
   const props = defineProps<{
+    label: string;
     type: string;
     placeholder: string;
   }>()
