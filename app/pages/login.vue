@@ -1,5 +1,5 @@
 <template>
-  <LoginBackground class="absolute -z-10" />
+  <DomainBackground class="absolute -z-10" />
   <div class="flex justify-center items-center p-32 w-screen h-screen">
     <div
       class="flex flex-col gap-5 p-10 w-full max-w-md border-double border-8 border-slate-400 ring-4 ring-slate-300 ring-inset bg-slate-100 shadow-xl"
