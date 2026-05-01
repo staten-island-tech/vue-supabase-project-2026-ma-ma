@@ -44,6 +44,58 @@ export default {
 
           label: colors.slate[500],
         },
+        card: {
+          DEFAULT: colors.slate[100],
+          border: colors.slate[400],
+          ring: colors.slate[300],
+          foreground: colors.slate[700],
+          shadow: colors.black,
+        },
+        domain: {
+          bg: colors.slate[800],
+          text: colors.white,
+          particle: colors.violet[100],
+          accent: {
+            DEFAULT: colors.violet[300],
+            dim: colors.violet[600],
+            glow: colors.violet[200],
+            subtle: colors.violet[700],
+          },
+          detail: {
+            DEFAULT: colors.fuchsia[400],
+            dim: colors.fuchsia[600],
+            glow: colors.fuchsia[300],
+          },
+          ray: {
+            DEFAULT: colors.indigo[200],
+            dim: colors.indigo[600],
+          },
+          slash: {
+            red: colors.rose[400],
+            redGlow: colors.rose[300],
+          },
+          slashBlue: {
+            DEFAULT: colors.indigo[700],
+            glow: colors.indigo[400],
+          },
+          overlay: {
+            scanline: colors.black,
+            veil: colors.violet[700],
+          },
+          corner: {
+            pink: colors.rose[400],
+            purple: colors.indigo[400],
+          },
+        },
+      },
+      opacity: {
+        3: "0.03",
+        7: "0.07",
+        8: "0.08",
+        12: "0.12",
+        15: "0.15",
+        18: "0.18",
+        22: "0.22",
       },
       boxShadow: {
         "transparent-sm": "2px 2px 0 0 rgba(0, 0, 0, 0.25)",

@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed inset-0 overflow-hidden bg-[#06060f]" aria-hidden="true">
+  <div class="fixed inset-0 overflow-hidden bg-domain-bg" aria-hidden="true">
     <svg
       class="domain__svg absolute inset-0 w-full h-full pointer-events-none [image-rendering:pixelated]"
       viewBox="0 0 100 100"
@@ -16,7 +16,7 @@
           patternUnits="userSpaceOnUse"
         >
           <rect width="2" height="2" fill="none" />
-          <rect width="1" height="1" fill="rgba(140,0,255,0.03)" />
+          <rect width="1" height="1" class="fill-domain-accent/3" />
         </pattern>
         <pattern
           id="scanlines"
@@ -26,7 +26,11 @@
           height="0.8"
           patternUnits="userSpaceOnUse"
         >
-          <rect width="1" height="0.4" fill="rgba(0,0,0,0.15)" />
+          <rect
+            width="1"
+            height="0.4"
+            class="fill-domain-overlay-scanline/15"
+          />
         </pattern>
       </defs>
 
@@ -130,22 +134,82 @@
       </text>
 
       <g class="domain__corner-deco domain__corner-deco--top-left">
-        <rect x="2" y="2" width="6" height="1" fill="rgba(200,50,100,0.4)" />
-        <rect x="2" y="2" width="1" height="6" fill="rgba(200,50,100,0.4)" />
-        <rect x="3" y="4" width="2" height="1" fill="rgba(200,50,100,0.2)" />
+        <rect
+          x="2"
+          y="2"
+          width="6"
+          height="1"
+          class="fill-domain-corner-pink/40"
+        />
+        <rect
+          x="2"
+          y="2"
+          width="1"
+          height="6"
+          class="fill-domain-corner-pink/40"
+        />
+        <rect
+          x="3"
+          y="4"
+          width="2"
+          height="1"
+          class="fill-domain-corner-pink/20"
+        />
       </g>
       <g class="domain__corner-deco domain__corner-deco--top-right">
-        <rect x="92" y="2" width="6" height="1" fill="rgba(80,20,200,0.4)" />
-        <rect x="97" y="2" width="1" height="6" fill="rgba(80,20,200,0.4)" />
-        <rect x="95" y="4" width="2" height="1" fill="rgba(80,20,200,0.2)" />
+        <rect
+          x="92"
+          y="2"
+          width="6"
+          height="1"
+          class="fill-domain-corner-purple/40"
+        />
+        <rect
+          x="97"
+          y="2"
+          width="1"
+          height="6"
+          class="fill-domain-corner-purple/40"
+        />
+        <rect
+          x="95"
+          y="4"
+          width="2"
+          height="1"
+          class="fill-domain-corner-purple/20"
+        />
       </g>
       <g class="domain__corner-deco domain__corner-deco--bottom-left">
-        <rect x="2" y="97" width="6" height="1" fill="rgba(200,50,100,0.4)" />
-        <rect x="2" y="92" width="1" height="6" fill="rgba(200,50,100,0.4)" />
+        <rect
+          x="2"
+          y="97"
+          width="6"
+          height="1"
+          class="fill-domain-corner-pink/40"
+        />
+        <rect
+          x="2"
+          y="92"
+          width="1"
+          height="6"
+          class="fill-domain-corner-pink/40"
+        />
       </g>
       <g class="domain__corner-deco domain__corner-deco--bottom-right">
-        <rect x="92" y="97" width="6" height="1" fill="rgba(80,20,200,0.4)" />
-        <rect x="97" y="92" width="1" height="6" fill="rgba(80,20,200,0.4)" />
+        <rect
+          x="92"
+          y="97"
+          width="6"
+          height="1"
+          class="fill-domain-corner-purple/40"
+        />
+        <rect
+          x="97"
+          y="92"
+          width="1"
+          height="6"
+          class="fill-domain-corner-purple/40"
+        />
       </g>
 
       <g class="domain__particles">
@@ -250,7 +314,7 @@
 }
 
 .domain__ring {
-  stroke: rgba(180, 0, 255, 0.18);
+  stroke: rgba(139, 92, 246, 0.18); /* domain.accent.DEFAULT / violet-500 */
   stroke-width: 0.4;
   animation: domain-ring-breathe 18s ease-in-out infinite;
   animation-delay: var(--delay);
@@ -267,7 +331,7 @@
 }
 
 .domain__ray {
-  stroke: rgba(160, 80, 220, 0.08);
+  stroke: rgba(129, 140, 248, 0.08); /* domain.ray.DEFAULT / indigo-400 */
   stroke-width: 0.15;
   animation: domain-ray-pulse 22s ease-in-out infinite;
   animation-delay: var(--rdelay);
@@ -284,7 +348,7 @@
 }
 
 .domain__bracket {
-  stroke: rgba(255, 80, 140, 0.6);
+  stroke: rgba(232, 121, 249, 0.6); /* domain.detail.DEFAULT / fuchsia-400 */
   stroke-width: 0.5;
   fill: none;
   animation: domain-bracket-blink 6s steps(1) infinite;
@@ -323,9 +387,9 @@
 }
 
 .domain__kanji {
-  fill: rgb(255, 255, 255);
+  fill: rgb(255, 255, 255); /* domain.text */
   animation: domain-seal-flicker 20s steps(1) infinite;
-  filter: blur(0.3px) drop-shadow(0 0 1px rgba(255, 80, 140, 0.8));
+  filter: blur(0.3px) drop-shadow(0 0 1px rgba(217, 70, 239, 0.8)); /* domain.detail.glow / fuchsia-500 */
 }
 
 @keyframes domain-seal-flicker {
@@ -351,7 +415,7 @@
 }
 
 .domain__particle {
-  fill: rgba(200, 100, 255, 0.7);
+  fill: rgba(196, 181, 253, 0.7); /* domain.particle / violet-300 */
   animation: domain-particle-float var(--pdur) ease-in-out infinite;
   animation-delay: var(--pdelay);
 }
@@ -388,13 +452,17 @@
 }
 
 .domain__slash--red {
-  background: linear-gradient(160deg, #6b0033 0%, #9a3a5a 100%);
+  background: linear-gradient(
+    160deg,
+    #be123c 0%,
+    #e11d48 100%
+  ); /* domain.slash.red → domain.slash.redGlow */
   clip-path: polygon(0 0, 46% 0, 30% 100%, 0 100%);
   opacity: 0.22;
 }
 
 .domain__slash--red-glow {
-  background: #7b0040;
+  background: #9f1239; /* domain.slash.redGlow / rose-800 */
   clip-path: polygon(0 0, 46% 0, 30% 100%, 0 100%);
   opacity: 0.07;
   filter: blur(48px);
@@ -402,13 +470,17 @@
 }
 
 .domain__slash--blue {
-  background: linear-gradient(160deg, #090030 0%, #12004e 100%);
+  background: linear-gradient(
+    160deg,
+    #1e1b4b 0%,
+    #312e81 100%
+  ); /* domain.slashBlue.DEFAULT → domain.slashBlue.glow */
   clip-path: polygon(60% 0, 100% 0, 100% 100%, 44% 100%);
   opacity: 0.5;
 }
 
 .domain__slash--blue-glow {
-  background: #200a80;
+  background: #4338ca; /* domain.slashBlue.glow / indigo-700 */
   clip-path: polygon(60% 0, 100% 0, 100% 100%, 44% 100%);
   opacity: 0.05;
   filter: blur(48px);
@@ -429,8 +501,8 @@
 .domain__veil {
   background: radial-gradient(
     ellipse at 50% 50%,
-    rgba(100, 0, 160, 0.12) 0%,
-    transparent 65%
+    rgba(76, 29, 149, 0.12) 0%,
+    /* domain.overlay.veil / violet-900 */ transparent 65%
   );
   animation: domain-veil-pulse 20s ease-in-out infinite;
 }
@@ -449,10 +521,10 @@
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(120, 0, 55, 0.18) 30%,
-    rgba(255, 255, 255, 0.06) 50%,
-    rgba(10, 0, 50, 0.18) 70%,
-    transparent 100%
+    rgba(190, 18, 60, 0.18) 30%,
+    /* domain.slash.red / rose-700 */ rgba(255, 255, 255, 0.06) 50%,
+    /* domain.text */ rgba(30, 27, 75, 0.18) 70%,
+    /* domain.slashBlue.DEFAULT / indigo-950 */ transparent 100%
   );
   animation: domain-streak-slide 24s ease-in-out infinite;
   animation-delay: 4s;
@@ -484,11 +556,10 @@
     box-shadow: inset 0 0 0px rgba(0, 0, 0, 0);
   }
   50% {
-    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.04);
+    box-shadow: inset 0 0 40px rgba(2, 6, 23, 0.04); /* domain.bg / slate-950 */
   }
   100% {
     box-shadow: inset 0 0 0px rgba(0, 0, 0, 0);
   }
 }
 </style>
-
