@@ -16,7 +16,7 @@
       </g>
 
       <!-- Large 呪 blended into the red slash area, bottom-left -->
-      <text x="22" y="65" class="seal-kanji" font-size="11" text-anchor="middle" transform="rotate(-12, 22, 95)">呪</text>
+      <text x="13" y="75" class="seal-kanji" font-size="11" text-anchor="middle" transform="rotate(-12, 22, 95)">呪</text>
 
       <!-- Black cursed marks on the red side -->
       <!--<g class="cursed-marks">

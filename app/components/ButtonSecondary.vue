@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="flex">
     <button
       v-bind="$attrs"
       :class="[
-        'p-5',
+        'w-full p-5',
         'border-4 border-double border-secondary-border bg-secondary shadow-transparent-md',
         'text-2xl text-secondary-foreground',
         'transition-all duration-150',
