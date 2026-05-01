@@ -1,10 +1,10 @@
 <template>
+  <LoginBackground class="absolute -z-10" />
   <div class="flex justify-center items-center p-32 w-screen h-screen">
-    <LoginBackground />
     <div
-      class="flex flex-col gap-5 p-10 w-full max-w-md rounded bg-white/5 backdrop-blur-sm border border-white/10"
+      class="flex flex-col gap-5 p-10 w-full max-w-md border-double border-8 border-slate-400 ring-4 ring-slate-300 ring-inset bg-slate-100 shadow-xl"
     >
-      <h2 class="text-xl font-medium text-white">Sign in</h2>
+      <h2 class="text-xl font-medium text-slate-500">Sign In</h2>
 
       <TextInput
         label="Username"
@@ -28,12 +28,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import LoginBackground from "~/components/LoginBackground.vue";
-import ButtonPrimary from "~/components/ButtonPrimary.vue";
-import ButtonSecondary from "~/components/ButtonSecondary.vue";
-import TextInput from "~/components/TextInput.vue";
-</script>
+<script setup lang="ts"></script>
 
 <style scoped></style>
 
