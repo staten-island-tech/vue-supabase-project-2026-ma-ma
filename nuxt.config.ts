@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  modules: ["@nuxtjs/tailwindcss"],
+  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/supabase"],
   css: [
     "@fontsource/pixelify-sans/400.css",
     "@fontsource/pixelify-sans/500.css",
@@ -10,3 +10,4 @@ export default defineNuxtConfig({
     "@fontsource/pixelify-sans/700.css",
   ],
 });
+
