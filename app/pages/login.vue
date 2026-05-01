@@ -30,7 +30,7 @@
 <script setup lang="ts">
 definePageMeta({
   layout: "auth",
-  pageTransition: { name: "auth", mode: "out-in" },
+  transitionGroup: "auth",
 });
 </script>
 
