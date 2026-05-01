@@ -374,15 +374,15 @@
 
 .domain__rings {
   transform-origin: 50px 50px;
-  animation: domain-slow-rotate 240s linear infinite;
+  animation: domain-slow-rotate 60s ease-in-out infinite alternate;
 }
 
 @keyframes domain-slow-rotate {
   from {
-    transform: translate(50px, 50px) rotate(0deg);
+    transform: translate(50px, 50px) rotate(15deg);
   }
   to {
-    transform: translate(50px, 50px) rotate(360deg);
+    transform: translate(50px, 50px) rotate(60deg);
   }
 }
 
