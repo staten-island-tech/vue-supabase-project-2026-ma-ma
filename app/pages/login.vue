@@ -10,6 +10,9 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import LoginBackground from '~/components/LoginBackground.vue';
+import ButtonPrimary from '~/components/ButtonPrimary.vue';
+</script>
 
 <style scoped></style>
