@@ -5,15 +5,7 @@
       :type="props.type"
       :placeholder="props.placeholder"
       v-bind="$attrs"
-      :class="[
-        'p-2',
-        'outline-none',
-        'border-4 border-double border-input-border bg-input',
-        'text-md text-input-foreground',
-        'transition-all duration-150',
-        'focus:border-input-focus-border focus:bg-input-focus focus:text-input-focus-foreground',
-        'placeholder:text-input-placeholder',
-      ]"
+      class="p-2 outline-none border-4 border-double border-input-border bg-input text-md text-input-foreground transition-all duration-150 focus:border-input-focus-border focus:bg-input-focus focus:text-input-focus-foreground focus:placeholder:text-input-focus-placeholder placeholder:text-input-placeholder"
     >
     </input>
   </div>

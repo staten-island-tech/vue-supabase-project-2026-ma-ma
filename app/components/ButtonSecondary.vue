@@ -2,14 +2,7 @@
   <div class="flex">
     <button
       v-bind="$attrs"
-      :class="[
-        'w-full p-2',
-        'border-4 border-double border-secondary-border bg-secondary shadow-transparent-md',
-        'text-md text-secondary-foreground',
-        'transition-all duration-150',
-        'hover:border-secondary-hover hover:bg-secondary-hover hover:text-secondary-hover-foreground hover:shadow-transparent-lg',
-        'active:translate-x-0.5 active:translate-y-0.5 active:shadow-none',
-      ]"
+      class="w-full px-3 py-2 border-4 border-double border-secondary-border bg-secondary text-md text-secondary-foreground transition-all duration-150 hover:border-secondary-hover hover:bg-secondary-hover hover:text-secondary-hover-foreground active:bg-secondary-hover active:border-secondary-hover active:brightness-90"
     >
       {{ props.label }}
     </button>

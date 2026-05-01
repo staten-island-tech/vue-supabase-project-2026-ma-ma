@@ -34,13 +34,15 @@ export default {
           focus: colors.blue[50],
           "focus-border": colors.blue[500],
           "focus-foreground": colors.blue[900],
+          "focus-placeholder": colors.blue[300],
 
           // Error (condition)
           error: colors.red[50],
           "error-border": colors.red[500],
           "error-foreground": colors.red[900],
+          "error-placeholder": colors.red[300],
 
-          label: colors.slate[300],
+          label: colors.slate[500],
         },
       },
       boxShadow: {
