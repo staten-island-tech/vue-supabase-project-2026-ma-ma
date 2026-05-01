@@ -1,12 +1,19 @@
 <template>
   <div class="flex justify-center items-center p-32 w-screen h-screen">
     <Card>
-      <h2 class="text-xl font-medium text-slate-500">Log in to your account</h2>
+      <h2 class="text-xl font-medium text-slate-500">Create a new account</h2>
 
       <TextInput
         label="Username"
         type="text"
         placeholder="Enter username"
+        class="w-full"
+      />
+
+      <TextInput
+        label="Email Address"
+        type="email"
+        placeholder="Enter email address"
         class="w-full"
       />
 
@@ -17,11 +24,18 @@
         class="w-full"
       />
 
-      <ButtonPrimary label="Log In" />
+      <TextInput
+        label="Confirm Password"
+        type="password"
+        placeholder="••••••••••••"
+        class="w-full"
+      />
+
+      <ButtonPrimary label="Register" />
 
       <div class="flex justify-between">
-        <PageLink to="register">New here? Register</PageLink>
-        <PageLink to="reset">Forgot password?</PageLink>
+        <PageLink to="login">Have an account? Sign in</PageLink>
+        <PageLink to="privacy">Privacy Policy</PageLink>
       </div>
     </Card>
   </div>

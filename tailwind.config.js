@@ -20,6 +20,13 @@ export default {
           hover: colors.red[500],
           "hover-foreground": colors.red[200],
         },
+        link: {
+          DEFAULT: colors.blue[400],
+          hover: colors.blue[500],
+          visited: colors.violet[300],
+          muted: colors.slate[300],
+          "muted-hover": colors.slate[500],
+        },
         input: {
           DEFAULT: colors.slate[50],
           border: colors.slate[400],

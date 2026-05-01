@@ -9,5 +9,13 @@ export default defineNuxtConfig({
     "@fontsource/pixelify-sans/600.css",
     "@fontsource/pixelify-sans/700.css",
   ],
+  supabase: {
+    redirectOptions: {
+      login: "/login",
+      callback: "/confirm",
+      include: undefined,
+      exclude: ["/register"],
+      saveRedirectToCookie: false,
+    },
+  },
 });
-
