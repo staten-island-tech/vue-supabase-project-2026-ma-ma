@@ -34,6 +34,9 @@
         default = pkgs.mkShellNoCC {
           packages = with pkgs; [
             nodejs
+            vue-language-server
+            vtsls
+            prettier
             self.formatter.${system}
           ];
         };
