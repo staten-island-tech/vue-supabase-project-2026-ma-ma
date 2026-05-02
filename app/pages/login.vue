@@ -5,11 +5,11 @@
 
       <form class="flex flex-col gap-5" @submit.prevent="signIn">
         <TextInput
-          label="Email"
+          label="Username"
           type="text"
-          placeholder="Enter email"
+          placeholder="Enter username"
           class="w-full"
-          v-model="email"
+          v-model="username"
         />
 
         <TextInput
@@ -32,25 +32,34 @@
 </template>
 
 <script setup lang="ts">
+const config = useRuntimeConfig();
 const supabase = useSupabaseClient();
-
-const email = ref<string>("");
-const password = ref<string>("");
 
 definePageMeta({
   layout: "auth",
   transitionGroup: "auth",
 });
 
+const username = ref<string>("");
+const password = ref<string>("");
+
+/**
+ * The user's account ID, formatted as an email address for Supabase Auth.
+ * Not a real email address. The domain is internal and no emails should ever be sent.
+ */
+const accountId = computed<string>(
+  () => `${username}@${config.authEmailDomain}`,
+);
+
 async function signIn() {
   const { data, error } = await supabase.auth.signInWithPassword({
-    email: email.value,
+    email: accountId.value,
     password: password.value,
   });
 
-  if (error) return console.log(error);
+  if (error) return alert(error);
 
-  console.log("Logged in successfully!");
+  alert("Logged in successfully!");
   console.log(data);
 }
 </script>

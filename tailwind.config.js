@@ -41,6 +41,7 @@ export default {
           "error-foreground": colors.red[900],
           "error-placeholder": colors.red[300],
           label: colors.slate[500],
+          warning: colors.red[700],
         },
         card: {
           DEFAULT: colors.slate[100],

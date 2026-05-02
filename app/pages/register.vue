@@ -6,26 +6,32 @@
       <form class="flex flex-col gap-5" @submit.prevent="register">
         <TextInput
           label="Username"
+          :rules="usernameRules"
           type="text"
           placeholder="Enter username"
           class="w-full"
+          ref="usernameInput"
           v-model="username"
         />
 
         <TextInput
-          label="Email Address"
-          type="email"
-          placeholder="Enter email address"
-          class="w-full"
-          v-model="email"
-        />
-
-        <TextInput
           label="Password"
+          :rules="passwordRules"
           type="password"
           placeholder="••••••••••••"
           class="w-full"
+          ref="passwordInput"
           v-model="password"
+        />
+
+        <TextInput
+          label="Confirm Password"
+          :rules="confirmPasswordRules"
+          type="password"
+          placeholder="••••••••••••"
+          class="w-full"
+          ref="confirmPasswordInput"
+          v-model="confirmPassword"
         />
 
         <ButtonPrimary label="Register" type="submit" />
@@ -40,7 +46,11 @@
 </template>
 
 <script setup lang="ts">
+import type { InputValidationRule } from "~/types/validation";
+
+const config = useRuntimeConfig();
 const supabase = useSupabaseClient();
+const { usernameRules, passwordRules } = useAuthStore();
 
 definePageMeta({
   layout: "auth",
@@ -48,12 +58,45 @@ definePageMeta({
 });
 
 const username = ref<string>("");
-const email = ref<string>("");
 const password = ref<string>("");
+const confirmPassword = ref<string>("");
+
+const usernameInput = ref();
+const passwordInput = ref();
+const confirmPasswordInput = ref();
+
+/**
+ * The user's account ID, formatted as an email address for Supabase Auth.
+ * Not a real email address. The domain is internal and no emails should ever be sent.
+ */
+const accountId = computed<string>(
+  () => `${username.value}@${config.public.authEmailDomain}`,
+);
+
+const confirmPasswordRules = computed<InputValidationRule[]>(() => [
+  {
+    test: (c: string) => c === password.value,
+    message: "Passwords must match",
+  },
+]);
 
 async function register() {
+  /* Re-validate the form.
+   * This is so that errors still display even if the inputs were never touched.
+   */
+  usernameInput.value?.validate();
+  passwordInput.value?.validate();
+  confirmPasswordInput.value?.validate();
+
+  if (
+    !usernameInput.value?.isValid ||
+    !passwordInput.value?.isValid ||
+    !confirmPasswordInput.value?.isValid
+  )
+    return alert("Please correct the errors above.");
+
   const { data, error } = await supabase.auth.signUp({
-    email: email.value,
+    email: accountId.value,
     password: password.value,
     options: {
       data: {
@@ -62,9 +105,9 @@ async function register() {
     },
   });
 
-  if (error) return console.log(error);
+  if (error) return alert(error);
 
-  console.log("Account registered successfully!");
+  alert("Account registered successfully!");
   console.log(data);
 }
 </script>
