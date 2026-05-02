@@ -18,4 +18,7 @@ export default defineNuxtConfig({
       saveRedirectToCookie: false,
     },
   },
+  runtimeConfig: {
+    authEmailDomain: "",
+  },
 });
